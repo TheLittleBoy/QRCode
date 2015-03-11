@@ -5,7 +5,7 @@ The _QRCodeReaderViewController_ was initialy a simple QRCode reader but it now 
 It provides a default view controller to display the camera view with the scan area overlay and it also provides a button to switch between the front and the back cameras.
 
 
-新添加来二维码生成功能。
+新添加二维码生成功能。
 
 
 
