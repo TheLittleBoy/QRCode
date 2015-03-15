@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		970BF1431AB07F9B00A42E19 /* CBQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970BF1421AB07F9B00A42E19 /* CBQRCodeViewController.m */; };
 		970BF1461AB0803000A42E19 /* UIImage+QRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 970BF1451AB0803000A42E19 /* UIImage+QRCode.m */; };
+		9779643E1AB5ADB2004C81F7 /* light_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9779643D1AB5ADB2004C81F7 /* light_green@2x.png */; };
 		CE29601E1987F124008FA93B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE29601D1987F124008FA93B /* main.m */; };
 		CE2960211987F124008FA93B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2960201987F124008FA93B /* AppDelegate.m */; };
 		CE2960241987F124008FA93B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2960231987F124008FA93B /* ViewController.m */; };
@@ -37,6 +38,7 @@
 		970BF1421AB07F9B00A42E19 /* CBQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBQRCodeViewController.m; sourceTree = "<group>"; };
 		970BF1441AB0803000A42E19 /* UIImage+QRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QRCode.h"; sourceTree = "<group>"; };
 		970BF1451AB0803000A42E19 /* UIImage+QRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QRCode.m"; sourceTree = "<group>"; };
+		9779643D1AB5ADB2004C81F7 /* light_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light_green@2x.png"; sourceTree = "<group>"; };
 		CE2960181987F124008FA93B /* QRCodeReaderViewControllerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeReaderViewControllerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE29601C1987F124008FA93B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE29601D1987F124008FA93B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				970BF1421AB07F9B00A42E19 /* CBQRCodeViewController.m */,
 				970BF1441AB0803000A42E19 /* UIImage+QRCode.h */,
 				970BF1451AB0803000A42E19 /* UIImage+QRCode.m */,
+				9779643D1AB5ADB2004C81F7 /* light_green@2x.png */,
 			);
 			name = QRCodeReaderViewController;
 			path = ../QRCodeReaderViewController;
@@ -240,6 +243,7 @@
 			files = (
 				CE2960271987F124008FA93B /* Main.storyboard in Resources */,
 				CE2960291987F124008FA93B /* Images.xcassets in Resources */,
+				9779643E1AB5ADB2004C81F7 /* light_green@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

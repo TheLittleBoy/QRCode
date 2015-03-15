@@ -27,6 +27,8 @@
 #import "QRCodeReaderView.h"
 
 @interface QRCodeReaderView ()
+
+@property (strong, nonatomic) UIImageView          *lineView;
 @property (nonatomic, strong) CAShapeLayer *overlay;
 
 @end
@@ -37,6 +39,8 @@
 {
   if ((self = [super initWithFrame:frame])) {
     [self addOverlay];
+    _lineView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"light_green"]];
+    [self addSubview:_lineView];
   }
   
   return self;
@@ -58,8 +62,22 @@
   
   CGRect offsetRect = CGRectOffset(innerRect, 0, 15);
   
-  
   _overlay.path = [UIBezierPath bezierPathWithRoundedRect:offsetRect cornerRadius:5].CGPath;
+    
+    CGRect frame = offsetRect;
+    CGFloat moveHeight = frame.size.height-5;
+    frame.size.height = 5;
+    _lineView.frame = frame;
+    
+    [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse animations:^{
+        //
+        CGRect frame = _lineView.frame;
+        frame.origin.y +=moveHeight;
+        _lineView.frame = frame;
+    } completion:^(BOOL finished) {
+        //
+        NSLog(@"finished");
+    }];
 }
 
 #pragma mark - Private Methods
