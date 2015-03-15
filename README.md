@@ -1,4 +1,4 @@
-![QRCodeReaderViewController](https://github.com/YannickL/QRCodeReaderViewController/blob/master/web/qrcodereaderviewcontroller_header.png)
+![QRCodeReaderViewController](https://github.com/TheLittleBoy/QRCode/blob/master/web/qrcodereaderviewcontroller_header.png)
 
 The _QRCodeReaderViewController_ was initialy a simple QRCode reader but it now lets you the possibility to specify the [format type](https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataMachineReadableCodeObject_Class/index.html#//apple_ref/doc/constant_group/Machine_Readable_Object_Types) you want to decode. It is based on the `AVFoundation` framework from Apple in order to replace ZXing or ZBar for iOS 7 and over.
 
@@ -7,7 +7,7 @@ It provides a default view controller to display the camera view with the scan a
 
 新添加二维码生成功能。
 
-
+![QRCode](https://github.com/TheLittleBoy/QRCode/blob/master/web/screenshot.jpg)
 
 ## License (MIT)
 
