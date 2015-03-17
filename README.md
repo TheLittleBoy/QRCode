@@ -7,6 +7,8 @@ It provides a default view controller to display the camera view with the scan a
 
 新添加二维码生成功能。
 
+支持一维码和二维码的扫描功能。
+
 ![QRCode](https://github.com/TheLittleBoy/QRCode/blob/master/web/screenshot.png)
 
 ## License (MIT)
