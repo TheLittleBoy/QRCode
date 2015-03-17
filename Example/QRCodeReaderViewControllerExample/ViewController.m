@@ -45,7 +45,7 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-      reader                        = [[QRCodeReaderViewController alloc] initWithCancelButtonTitle:@"取消"];
+      reader                        = [[QRCodeReaderViewController alloc] initWithCancelButtonTitle:@"取消" metadataObjectTypes:@[AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode93Code,AVMetadataObjectTypeCode128Code,AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeQRCode,AVMetadataObjectTypeUPCECode]];
       reader.modalPresentationStyle = UIModalPresentationFormSheet;
     });
     reader.delegate = self;

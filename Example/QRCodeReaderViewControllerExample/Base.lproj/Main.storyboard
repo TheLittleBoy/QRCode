@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="width" constant="138" id="CQc-Ob-Vcx"/>
                                     <constraint firstAttribute="height" constant="64" id="R42-y5-CME"/>
                                 </constraints>
-                                <state key="normal" title="扫描二维码">
+                                <state key="normal" title="扫描图形码">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>

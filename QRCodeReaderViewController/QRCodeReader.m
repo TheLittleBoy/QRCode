@@ -211,6 +211,7 @@
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
   for (AVMetadataObject *current in metadataObjects) {
+      NSLog(@"类型 %@",current.type);
     if ([current isKindOfClass:[AVMetadataMachineReadableCodeObject class]]
         && [_metadataObjectTypes containsObject:current.type]) {
       NSString *scannedResult = [(AVMetadataMachineReadableCodeObject *) current stringValue];
