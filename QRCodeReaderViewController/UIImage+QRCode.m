@@ -43,8 +43,8 @@
     }
     
     //5. 上色滤镜
-    UIColor *onColor = [UIColor whiteColor];
-    UIColor *offColor = [UIColor blackColor];
+    UIColor *onColor = [UIColor blackColor];
+    UIColor *offColor = [UIColor whiteColor];
     
     CIFilter *colorFilter = [CIFilter filterWithName:@"CIFalseColor"
                                        keysAndValues:

@@ -32,7 +32,7 @@
                                     <action selector="creatAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rUY-9Q-ylb"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="输入文字生成二维码" translatesAutoresizingMaskIntoConstraints="NO" id="8lQ-rB-R16">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8lQ-rB-R16" customClass="RTPlaceholderTextView">
                                 <rect key="frame" x="39" y="44" width="523" height="94"/>
                                 <color key="backgroundColor" red="0.81230271460000003" green="0.81230271460000003" blue="0.81230271460000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -40,6 +40,12 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="输入文字生成二维码"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderTextColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7B5-Qf-gUB">
                                 <rect key="frame" x="231" y="281" width="138" height="64"/>
