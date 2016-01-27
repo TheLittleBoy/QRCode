@@ -28,8 +28,9 @@
 #import "QRCodeReaderViewController.h"
 #import "QRCodeReader.h"
 #import "CBQRCodeViewController.h"
+#import "UIImage+QRCode.h"
 
-@interface ViewController ()
+@interface ViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
     NSString * qrResult;
 }
@@ -37,6 +38,11 @@
 @end
 
 @implementation ViewController
+
+- (IBAction)tapGestureRecognizer:(id)sender {
+    
+    [_myTextView resignFirstResponder];
+}
 
 - (IBAction)scanAction:(id)sender
 {
@@ -70,6 +76,41 @@
     
     [self presentViewController:codeVC animated:YES completion:NULL];
     
+}
+
+- (IBAction)readAction:(id)sender {
+    
+    UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
+    
+    photoPicker.delegate = self;
+    photoPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    photoPicker.view.backgroundColor = [UIColor whiteColor];
+    [self presentViewController:photoPicker animated:YES completion:NULL];
+    
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+    
+    UIImage * srcImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    NSString *result = [UIImage readQRCodeFromImage:srcImage];
+    
+    if (result && ![result isEqualToString:@""])
+    {
+        qrResult = result;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"扫描结果" message:result delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"前往浏览器",@"复制文本",nil];
+        [alert show];
+    }else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"没有识别到二维码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 #pragma mark - QRCodeReader Delegate Methods

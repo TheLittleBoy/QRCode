@@ -42,10 +42,21 @@
             break;
     }
     
-    // 5. 由filter输出图像
-    CIImage *outputImage = [filter outputImage];
+    //5. 上色滤镜
+    UIColor *onColor = [UIColor whiteColor];
+    UIColor *offColor = [UIColor blackColor];
     
-    // 6. 将CIImage转换为UIImage
+    CIFilter *colorFilter = [CIFilter filterWithName:@"CIFalseColor"
+                                       keysAndValues:
+                             @"inputImage",filter.outputImage,
+                             @"inputColor0",[CIColor colorWithCGColor:onColor.CGColor],
+                             @"inputColor1",[CIColor colorWithCGColor:offColor.CGColor],
+                             nil];
+    
+    // 6. 由filter输出图像
+    CIImage *outputImage = [colorFilter outputImage];
+    
+    // 7. 将CIImage转换为UIImage
     //[UIImage imageWithCIImage:outputImage];
     
     return outputImage;
@@ -54,5 +65,38 @@
 +(CIImage*)createQRCodeImage:(NSString*)str
 {
     return [self createQRCodeImage:str withLevel:QRCorrectionLevelQ];
+}
+
+
++(NSString *)readQRCodeFromImage:(UIImage *)srcImage
+{
+    NSMutableString * result = [[NSMutableString alloc]init];
+    
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 80000
+    CIImage *image = [CIImage imageWithCGImage:srcImage.CGImage];
+    
+    // 创建CIDetector
+    CIDetector *qrDetector = [CIDetector detectorOfType:CIDetectorTypeQRCode
+                                                context:[CIContext contextWithOptions:@{kCIContextUseSoftwareRenderer : @(YES)}]
+                                                options:@{CIDetectorAccuracy : CIDetectorAccuracyHigh}];
+    NSArray *features = [qrDetector featuresInImage:image];
+    if ([features count] > 0)
+    {
+        for (CIFeature *feature in features)
+        {
+            if (![feature isKindOfClass:[CIQRCodeFeature class]])
+            {
+                continue;
+            }
+            
+            CIQRCodeFeature *qrFeature = (CIQRCodeFeature *)feature;
+            NSString *code = qrFeature.messageString;
+            
+            [result appendString:code];
+        }
+    }
+#endif
+    
+    return result;
 }
 @end

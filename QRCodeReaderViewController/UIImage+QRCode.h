@@ -22,4 +22,7 @@ typedef NS_ENUM(NSInteger, QRCorrectionLevel) {
 +(CIImage*)createQRCodeImage:(NSString*)str;
 +(CIImage*)createQRCodeImage:(NSString*)str withLevel:(QRCorrectionLevel)level;
 
+
++(NSString *)readQRCodeFromImage:(UIImage *)image;
+
 @end

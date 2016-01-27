@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -32,7 +32,7 @@
                                     <action selector="creatAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rUY-9Q-ylb"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="文本框" translatesAutoresizingMaskIntoConstraints="NO" id="8lQ-rB-R16">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="文本框" translatesAutoresizingMaskIntoConstraints="NO" id="8lQ-rB-R16">
                                 <rect key="frame" x="39" y="44" width="523" height="94"/>
                                 <color key="backgroundColor" red="0.81230271460000003" green="0.81230271460000003" blue="0.81230271460000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -42,7 +42,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7B5-Qf-gUB">
-                                <rect key="frame" x="231" y="329" width="138" height="64"/>
+                                <rect key="frame" x="231" y="281" width="138" height="64"/>
                                 <color key="backgroundColor" red="0.81230271460000003" green="0.81230271460000003" blue="0.81230271460000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="138" id="CQc-Ob-Vcx"/>
@@ -55,23 +55,48 @@
                                     <action selector="scanAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s4e-ia-1p4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXC-fr-fnN">
+                                <rect key="frame" x="231" y="366" width="138" height="64"/>
+                                <color key="backgroundColor" red="0.81230271460000003" green="0.81230271460000003" blue="0.81230271460000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="JXO-x5-e4t"/>
+                                    <constraint firstAttribute="height" constant="64" id="r98-71-PdA"/>
+                                </constraints>
+                                <state key="normal" title="识别图中二维码">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="readAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sUk-L8-Vf6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="8lQ-rB-R16" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="23" id="CXa-dc-SBN"/>
                             <constraint firstAttribute="centerX" secondItem="kct-zV-dJD" secondAttribute="centerX" id="Dyx-T7-WFJ"/>
                             <constraint firstAttribute="centerX" secondItem="7B5-Qf-gUB" secondAttribute="centerX" id="c8i-44-KHu"/>
+                            <constraint firstItem="gXC-fr-fnN" firstAttribute="top" secondItem="7B5-Qf-gUB" secondAttribute="bottom" constant="21" id="dhd-9E-TG8"/>
                             <constraint firstItem="kct-zV-dJD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="167" id="fwe-9P-kzF"/>
-                            <constraint firstItem="7B5-Qf-gUB" firstAttribute="top" secondItem="kct-zV-dJD" secondAttribute="bottom" constant="78" id="mt3-oj-4sP"/>
+                            <constraint firstItem="7B5-Qf-gUB" firstAttribute="top" secondItem="kct-zV-dJD" secondAttribute="bottom" constant="30" id="mt3-oj-4sP"/>
                             <constraint firstItem="8lQ-rB-R16" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="24" id="utX-tG-YcP"/>
+                            <constraint firstItem="gXC-fr-fnN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vYk-sz-xG3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8lQ-rB-R16" secondAttribute="trailing" constant="22" id="xaC-q6-xxt"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="yMf-Lp-3iz" appends="YES" id="ZyD-rs-qtn"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="myTextView" destination="8lQ-rB-R16" id="Rfs-xi-eKH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yMf-Lp-3iz">
+                    <connections>
+                        <action selector="tapGestureRecognizer:" destination="BYZ-38-t0r" id="3ge-3K-1s2"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04AB6D661C575D83001AA5B9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04AB6D651C575D82001AA5B9 /* Default-568h@2x.png */; };
 		970BF1431AB07F9B00A42E19 /* CBQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970BF1421AB07F9B00A42E19 /* CBQRCodeViewController.m */; };
 		970BF1461AB0803000A42E19 /* UIImage+QRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 970BF1451AB0803000A42E19 /* UIImage+QRCode.m */; };
 		9779643E1AB5ADB2004C81F7 /* light_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9779643D1AB5ADB2004C81F7 /* light_green@2x.png */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04AB6D651C575D82001AA5B9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		970BF1411AB07F9B00A42E19 /* CBQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBQRCodeViewController.h; sourceTree = "<group>"; };
 		970BF1421AB07F9B00A42E19 /* CBQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBQRCodeViewController.m; sourceTree = "<group>"; };
 		970BF1441AB0803000A42E19 /* UIImage+QRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QRCode.h"; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		CE29600F1987F124008FA93B = {
 			isa = PBXGroup;
 			children = (
+				04AB6D651C575D82001AA5B9 /* Default-568h@2x.png */,
 				CE29603E1987F140008FA93B /* QRCodeReaderViewController */,
 				CE29601A1987F124008FA93B /* QRCodeReaderViewControllerExample */,
 				CE2960311987F125008FA93B /* QRCodeReaderViewControllerExampleTests */,
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE2960271987F124008FA93B /* Main.storyboard in Resources */,
+				04AB6D661C575D83001AA5B9 /* Default-568h@2x.png in Resources */,
 				CE2960291987F124008FA93B /* Images.xcassets in Resources */,
 				9779643E1AB5ADB2004C81F7 /* light_green@2x.png in Resources */,
 			);
@@ -388,6 +392,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = QRCodeReaderViewControllerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -399,6 +404,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = QRCodeReaderViewControllerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
