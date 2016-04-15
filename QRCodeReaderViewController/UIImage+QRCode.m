@@ -72,30 +72,31 @@
 {
     NSMutableString * result = [[NSMutableString alloc]init];
     
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 80000
-    CIImage *image = [CIImage imageWithCGImage:srcImage.CGImage];
-    
-    // 创建CIDetector
-    CIDetector *qrDetector = [CIDetector detectorOfType:CIDetectorTypeQRCode
-                                                context:[CIContext contextWithOptions:@{kCIContextUseSoftwareRenderer : @(YES)}]
-                                                options:@{CIDetectorAccuracy : CIDetectorAccuracyHigh}];
-    NSArray *features = [qrDetector featuresInImage:image];
-    if ([features count] > 0)
-    {
-        for (CIFeature *feature in features)
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        
+        CIImage *image = [CIImage imageWithCGImage:srcImage.CGImage];
+        
+        // 创建CIDetector
+        CIDetector *qrDetector = [CIDetector detectorOfType:CIDetectorTypeQRCode
+                                                    context:[CIContext contextWithOptions:@{kCIContextUseSoftwareRenderer : @(YES)}]
+                                                    options:@{CIDetectorAccuracy : CIDetectorAccuracyHigh}];
+        NSArray *features = [qrDetector featuresInImage:image];
+        if ([features count] > 0)
         {
-            if (![feature isKindOfClass:[CIQRCodeFeature class]])
+            for (CIFeature *feature in features)
             {
-                continue;
+                if (![feature isKindOfClass:[CIQRCodeFeature class]])
+                {
+                    continue;
+                }
+                
+                CIQRCodeFeature *qrFeature = (CIQRCodeFeature *)feature;
+                NSString *code = qrFeature.messageString;
+                
+                [result appendString:code];
             }
-            
-            CIQRCodeFeature *qrFeature = (CIQRCodeFeature *)feature;
-            NSString *code = qrFeature.messageString;
-            
-            [result appendString:code];
         }
     }
-#endif
     
     return result;
 }

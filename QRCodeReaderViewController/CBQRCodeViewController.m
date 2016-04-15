@@ -10,6 +10,9 @@
 #import "UIImage+QRCode.h"
 
 @interface CBQRCodeViewController ()
+{
+    UIImageView *myImageView;
+}
 
 @end
 
@@ -40,7 +43,7 @@
                                     rate:5.0];
     
     
-    UIImageView *myImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
+    myImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
     myImageView.center = self.view.center;
     
     myImageView.image = resized;
@@ -52,15 +55,87 @@
     
     UIButton * backbutton = [UIButton buttonWithType:UIButtonTypeSystem];
     [backbutton setTitle:@"返回" forState:UIControlStateNormal];
-    backbutton.frame = CGRectMake((self.view.frame.size.width-150)/2, self.view.frame.size.height-80, 150, 50);
+    backbutton.frame = CGRectMake((self.view.frame.size.width-300)/3, self.view.frame.size.height-80, 150, 50);
     [backbutton addTarget:self action:@selector(backButtonPress) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backbutton];
     
+    UIButton * savebutton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [savebutton setTitle:@"保存到相册" forState:UIControlStateNormal];
+    savebutton.frame = CGRectMake((self.view.frame.size.width-300)/3*2 + 150, self.view.frame.size.height-80, 150, 50);
+    [savebutton addTarget:self action:@selector(saveButtonPress) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:savebutton];
+    
+    NSArray * ar = [NSArray arrayWithObjects:@"L",@"M",@"Q",@"H", nil];
+
+    int lever[4] = {QRCorrectionLevelL,QRCorrectionLevelM,QRCorrectionLevelQ,QRCorrectionLevelH};
+    
+    for (int i = 0;i<4;i++) {
+        
+        NSString * str = ar[i];
+        
+        CGFloat width = 50;
+        CGFloat height = 40;
+        CGFloat space = (self.view.frame.size.width-width*4)/5.0;
+        
+        UIButton * button = [UIButton buttonWithType: UIButtonTypeSystem];
+        [button setTitle:str forState:UIControlStateNormal];
+        button.frame = CGRectMake(space*(i+1) + width*i, 30 ,width, height);
+        button.tag = lever[i];
+        [button addTarget:self action:@selector(qualityButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+    }
+    
+}
+
+-(void)qualityButtonPress:(UIButton *)button
+{
+    //将编码后的信息生成二维码
+    CIImage *outputImage = [UIImage createQRCodeImage:_text withLevel:button.tag];
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef cgImage = [context createCGImage:outputImage
+                                       fromRect:[outputImage extent]];
+    //将CGImage转换成UIImage
+    UIImage *image = [UIImage imageWithCGImage:cgImage
+                                         scale:1.
+                                   orientation:UIImageOrientationUp];
+    
+    // Resize without interpolating
+    UIImage *resized = [self resizeImage:image
+                             withQuality:kCGInterpolationNone
+                                    rate:5.0];
+    
+    myImageView.image = resized;
 }
 
 -(void)backButtonPress
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+//保存图片到本地相册
+-(void)saveButtonPress
+{
+    UIImage * image = myImageView.image;
+    UIImageWriteToSavedPhotosAlbum(image,
+                                   self,
+                                   @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:),
+                                   NULL);
+}
+
+- (void)thisImage:(UIImage *)image hasBeenSavedInPhotoAlbumWithError:(NSError *)error usingContextInfo:(void*)ctxInfo {
+    if (error) {
+        // Do anything needed to handle the error or display it to the user
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"error.localizedDescription" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        
+    } else {
+        // .... do anything you want here to handle
+        // .... when the image has been saved in the photo album
+        
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"以保存到相册" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
 - (void)didReceiveMemoryWarning

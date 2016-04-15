@@ -39,6 +39,15 @@
 
 @implementation ViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
+        [_readButton removeFromSuperview];
+    }
+}
+
 - (IBAction)tapGestureRecognizer:(id)sender {
     
     [_myTextView resignFirstResponder];

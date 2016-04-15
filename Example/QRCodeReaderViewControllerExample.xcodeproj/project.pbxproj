@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		040E067D1C58B6C400F1A074 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040E067C1C58B6C400F1A074 /* Launch Screen.storyboard */; };
 		040E06801C58B72F00F1A074 /* RTPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040E067F1C58B72F00F1A074 /* RTPlaceholderTextView.m */; };
+		0487F4D31CC0B70F00D3DC6D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0487F4D21CC0B70F00D3DC6D /* Default-568h@2x.png */; };
 		970BF1431AB07F9B00A42E19 /* CBQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970BF1421AB07F9B00A42E19 /* CBQRCodeViewController.m */; };
 		970BF1461AB0803000A42E19 /* UIImage+QRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 970BF1451AB0803000A42E19 /* UIImage+QRCode.m */; };
 		9779643E1AB5ADB2004C81F7 /* light_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9779643D1AB5ADB2004C81F7 /* light_green@2x.png */; };
@@ -39,6 +40,7 @@
 		040E067C1C58B6C400F1A074 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		040E067E1C58B72F00F1A074 /* RTPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTPlaceholderTextView.h; sourceTree = "<group>"; };
 		040E067F1C58B72F00F1A074 /* RTPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTPlaceholderTextView.m; sourceTree = "<group>"; };
+		0487F4D21CC0B70F00D3DC6D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		970BF1411AB07F9B00A42E19 /* CBQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBQRCodeViewController.h; sourceTree = "<group>"; };
 		970BF1421AB07F9B00A42E19 /* CBQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBQRCodeViewController.m; sourceTree = "<group>"; };
 		970BF1441AB0803000A42E19 /* UIImage+QRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QRCode.h"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		CE29600F1987F124008FA93B = {
 			isa = PBXGroup;
 			children = (
+				0487F4D21CC0B70F00D3DC6D /* Default-568h@2x.png */,
 				CE29603E1987F140008FA93B /* QRCodeReaderViewController */,
 				CE29601A1987F124008FA93B /* QRCodeReaderViewControllerExample */,
 				CE2960311987F125008FA93B /* QRCodeReaderViewControllerExampleTests */,
@@ -252,6 +255,7 @@
 				CE2960271987F124008FA93B /* Main.storyboard in Resources */,
 				CE2960291987F124008FA93B /* Images.xcassets in Resources */,
 				040E067D1C58B6C400F1A074 /* Launch Screen.storyboard in Resources */,
+				0487F4D31CC0B70F00D3DC6D /* Default-568h@2x.png in Resources */,
 				9779643E1AB5ADB2004C81F7 /* light_green@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,7 +401,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = QRCodeReaderViewControllerExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -408,7 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = QRCodeReaderViewControllerExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

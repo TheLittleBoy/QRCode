@@ -30,6 +30,7 @@
 @interface ViewController : UIViewController <QRCodeReaderDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *myTextView;
 - (IBAction)tapGestureRecognizer:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *readButton;
 
 - (IBAction)scanAction:(id)sender;
 - (IBAction)creatAction:(id)sender;
